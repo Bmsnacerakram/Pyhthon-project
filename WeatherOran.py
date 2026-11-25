@@ -14,7 +14,10 @@ start_day=week_ago.strftime("%Y-%m-%d")
 end_day=today.strftime("%Y-%m-%d")
 
 
-url=f"https://api.open-meteo.com/v1/forecast?latitude=35.70&longitude=-0.63&start_date={start_day}&end_date={end_day}&daily=temperature_2m_max,temperature_2m_min"
+latitude=input("Enter latitude: ")
+longitude=input("Enter longitude: ")
+
+url=f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&start_date={start_day}&end_date={end_day}&daily=temperature_2m_max,temperature_2m_min"
 
 result=requests.get(url)
 data=result.json()
