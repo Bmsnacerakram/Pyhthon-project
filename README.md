@@ -1,9 +1,11 @@
-# Oran Weather Report
+# Weather Report by Coordinates
 
-A Python script that retrieves the last 7 days of daily temperatures for Oran, Algeria, organizes them in a table, and generates a line chart.
+A Python script that asks for the latitude and longitude of any location, identifies the place name, retrieves the last 7 days of daily temperatures for it, organizes them in a table, and generates a line chart.
 
 ## Features
 
+- Accepts any location through latitude and longitude input
+- Displays the name of the place that matches the coordinates
 - Fetches daily maximum and minimum temperatures from a public weather API
 - Builds a structured table with pandas
 - Plots a clear line chart (max vs. min temperature)
@@ -15,6 +17,7 @@ A Python script that retrieves the last 7 days of daily temperatures for Oran, A
 - `requests` (API calls)
 - `pandas` (data handling)
 - `matplotlib` (visualization)
+- [REPLACE: library or API used to get the place name, for example `geopy`]
 
 ## Installation
 
@@ -30,7 +33,14 @@ pip install -r requirements.txt
 python weather.py
 ```
 
-The script displays the chart and saves two files:
+The script asks for the coordinates, for example:
+
+```
+Enter latitude: 35.70
+Enter longitude: -0.63
+```
+
+It then shows the place name, displays the chart, and saves two files:
 
 | File | Description |
 |------|-------------|
@@ -47,7 +57,7 @@ Weather data provided by [Open-Meteo](https://open-meteo.com/) under the [CC BY 
 
 ## Possible Improvements
 
-- Choose the city from a list of Algerian cities
+- Validate the input (latitude between -90 and 90, longitude between -180 and 180)
 - Add precipitation and wind speed
 - Handle network errors (timeout and retries)
 - Organize the code into reusable functions
